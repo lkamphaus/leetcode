@@ -22,3 +22,5 @@ const search = (arr, value, min = 0, max = arr.length - 1) => {
 console.log(search([1, 2, 3, 4, 5, 6], 4)) //3
 console.log(search([1, 2, 3, 4, 5, 6], 6)) //5
 console.log(search([1, 2, 3, 4, 5, 6], 8)) //-1
+
+//time complexity O(log n)
