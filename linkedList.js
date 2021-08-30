@@ -18,7 +18,7 @@ class LinkedList {
 
     if (this.length === 0) {
       this.head = newNode;
-      this.tail = newNode;
+      this.tail = this.head;
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
@@ -75,7 +75,7 @@ class LinkedList {
 
     if (this.length === 0) {
       this.head = newHead;
-      this.tail = newHead;
+      this.tail = this.head;
     } else {
       newHead.next = this.head;
     }
