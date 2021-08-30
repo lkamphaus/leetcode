@@ -90,7 +90,7 @@ class LinkedList {
     let curr = this.head;
 
     if (index > this.length || index < 0) {
-      return undefined;
+      return null;
     }
 
     while (count < this.length) {
@@ -102,6 +102,17 @@ class LinkedList {
       }
     }
   }
+
+  set(index, val) {
+    let curr = this.get(index);
+
+    if (!curr) {
+      return false;
+    }
+
+    curr.val = val;
+    return true;
+  }
 }
 
 
@@ -109,8 +120,6 @@ let list = new LinkedList();
 list.push('HELLO');
 list.push('why');
 list.push('hi');
-list.push('hi2');
-list.push('hi3');
 
 console.log(list.get(4));
 
