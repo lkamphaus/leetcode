@@ -55,6 +55,19 @@ class LinkedList {
     }
     return oldTail.val;
   }
+
+  //time complexity O(1)
+  shift() {
+
+    if (this.length === 0) {
+      return undefined;
+    }
+
+    let oldHead = this.head;
+    this.head = this.head.next;
+    this.length--;
+    return oldHead.val;
+  }
 }
 
 
@@ -65,4 +78,4 @@ list.push('hi');
 list.push('hi2');
 list.push('hi3');
 
-console.log(list.pop());
+console.log(list.shift());
