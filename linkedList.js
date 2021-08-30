@@ -30,7 +30,6 @@ class LinkedList {
 
   //time complexity O(n)
   pop() {
-
     if (this.length === 0) {
       return undefined;
     }
@@ -58,7 +57,6 @@ class LinkedList {
 
   //time complexity O(1)
   shift() {
-
     if (this.length === 0) {
       return undefined;
     }
@@ -69,8 +67,8 @@ class LinkedList {
     return oldHead.val;
   }
 
+    //time complexity O(1)
   unshift(val) {
-
     let newHead = new Node(val);
 
     if (this.length === 0) {
@@ -85,6 +83,25 @@ class LinkedList {
     this.length++
     return this;
   }
+
+  //time complexity O(n)
+  get(index) {
+    let count = 0;
+    let curr = this.head;
+
+    if (index > this.length || index < 0) {
+      return undefined;
+    }
+
+    while (count < this.length) {
+      if (count === index) {
+        return curr;
+      } else {
+        curr = curr.next;
+        count = count + 1;
+      }
+    }
+  }
 }
 
 
@@ -95,7 +112,5 @@ list.push('hi');
 list.push('hi2');
 list.push('hi3');
 
-console.log(list.unshift('boo'));
-console.log('list', list);
-console.log(list.unshift('boo2'));
-console.log('list', list);
+console.log(list.get(4));
+
