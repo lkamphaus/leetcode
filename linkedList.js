@@ -12,6 +12,7 @@ class LinkedList {
     this.length = 0;
   }
 
+  //time complexity O(1)
   push(val) {
     const newNode = new Node(val);
 
@@ -27,14 +28,37 @@ class LinkedList {
 
     return this;
   }
+
+  //time complexity O(n)
+  pop() {
+
+    if (this.length === 0) {
+      return undefined;
+    }
+
+    let curr = this.head;
+    let oldTail;
+
+    while (curr.next) {
+      if (curr.next === this.tail) {
+        oldTail = this.tail;
+        curr.next = null;
+        this.tail = curr;
+        break;
+      }
+      curr = curr.next;
+    }
+
+    return oldTail.val;
+  }
 }
 
 
 let list = new LinkedList();
 list.push('HELLO');
 list.push('why');
-list.push('GOODBYE');
-list.push('why2');
+list.push('hi');
+list.push('hi2');
+list.push('hi3');
 
-
-console.log(list);
+console.log(list.pop());
