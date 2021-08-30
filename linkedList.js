@@ -39,7 +39,7 @@ class LinkedList {
     let curr = this.head;
     let oldTail;
 
-    while (curr.next) {
+    while (curr.next !== null) {
       if (curr.next === this.tail) {
         oldTail = this.tail;
         curr.next = null;
@@ -49,6 +49,7 @@ class LinkedList {
       curr = curr.next;
     }
 
+    this.length--;
     return oldTail.val;
   }
 }
