@@ -25,7 +25,6 @@ class LinkedList {
     }
 
     this.length++;
-
     return this;
   }
 
@@ -50,6 +49,10 @@ class LinkedList {
     }
 
     this.length--;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
     return oldTail.val;
   }
 }
