@@ -16,12 +16,10 @@ class BST {
 
     if (this.root === null) {
       this.root = newNode;
-      console.log(this);
       return this;
     }
 
     const search = (node) => {
-      console.log('this', node);
       if (node.val === val) {
         return undefined;
       }
@@ -46,40 +44,37 @@ class BST {
   }
 
   find(val) {
-     let newNode = new Node(val);
-
     if (this.root === null) {
-      this.root = newNode;
-      console.log(this);
-      return this;
+      return false;
     }
 
+    let result;
+
     const search = (node) => {
-      console.log('this', node);
       if (node.val === val) {
-        return undefined;
+        result = true;
+        return;
       }
       if (node.val > val) {
         if (node.left === null) {
-          node.left = newNode;
+          result = false;
+          return;
         } else {
           search(node.left);
         }
       } else if (node.val < val) {
         if (node.right === null) {
-          node.right = newNode;
+          result = false;
+          return;
         } else {
           search(node.right);
         }
       }
     }
-
     search(this.root);
 
-    return this;
+    return result;
   }
-
-
 }
 
 
@@ -91,4 +86,7 @@ tree.insert(13);
 tree.insert(11);
 tree.insert(16);
 
-console.log(tree);
+console.log(tree.find(2)); //true
+console.log(tree.find(7)); //false
+console.log(tree.find(100)); //false
+console.log(tree.find(5)); //true
