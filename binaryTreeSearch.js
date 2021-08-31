@@ -99,6 +99,29 @@ class BST {
     }
     return result;
   }
+
+  DFS () {
+    let result = [];
+
+    result.push(this.root.val)
+
+    const search = (node) => {
+
+      if (node.left) {
+        result.push(node.left.val);
+        search(node.left);
+      }
+
+      if (node.right) {
+        result.push(node.right.val);
+        search(node.right);
+      }
+    }
+
+    search(this.root);
+
+    return result;
+  }
 }
 
 
@@ -115,4 +138,6 @@ console.log(tree.find(7)); //false
 console.log(tree.find(100)); //false
 console.log(tree.find(5)); //true
 
-console.log(tree.BFS());
+console.log(tree.DFS());
+
+//10, 5, 2, 13, 11, 16
