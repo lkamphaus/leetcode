@@ -103,6 +103,7 @@ class LinkedList {
     }
   }
 
+  //time complexity O(n)
   set(index, val) {
     let curr = this.get(index);
 
@@ -114,6 +115,7 @@ class LinkedList {
     return true;
   }
 
+  //time complexity O(n)
   insert(index, val) {
     if (index < 0 || index > this.length) {
       return false;
@@ -140,6 +142,7 @@ class LinkedList {
     return true;
   }
 
+  //time complexity O(n)
   remove(index) {
     if (index < 0 || index > this.length) {
       return false;
