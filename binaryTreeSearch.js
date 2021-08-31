@@ -11,6 +11,7 @@ class BST {
     this.root = null;
   }
 
+  //time complexity O(log n)
   insert(val) {
     let newNode = new Node(val);
 
@@ -43,6 +44,7 @@ class BST {
     return this;
   }
 
+  //time complexity O(log n)
   find(val) {
     if (this.root === null) {
       return false;
