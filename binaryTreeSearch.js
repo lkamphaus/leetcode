@@ -77,6 +77,28 @@ class BST {
 
     return result;
   }
+
+  BFS() {
+    let queue = [];
+    let result = [];
+
+    queue.push(this.root);
+
+    while (queue.length) {
+      let firstIn = queue.shift();
+
+      result.push(firstIn.val);
+
+      if (firstIn.left !== null) {
+        queue.push(firstIn.left);
+      }
+
+      if (firstIn.right !== null) {
+        queue.push(firstIn.right);
+      }
+    }
+    return result;
+  }
 }
 
 
@@ -92,3 +114,5 @@ console.log(tree.find(2)); //true
 console.log(tree.find(7)); //false
 console.log(tree.find(100)); //false
 console.log(tree.find(5)); //true
+
+console.log(tree.BFS());
