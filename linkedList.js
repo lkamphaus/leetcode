@@ -121,5 +121,6 @@ list.push('HELLO');
 list.push('why');
 list.push('hi');
 
-console.log(list.get(4));
+console.log(list.set(2, 'hi2'));
+console.log(list.pop());
 
