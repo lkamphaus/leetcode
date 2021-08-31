@@ -135,6 +135,8 @@ class LinkedList {
     prevNode.next = newNode;
     newNode.next = nextNode;
 
+    this.length++;
+
     return true;
   }
 }
