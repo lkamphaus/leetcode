@@ -162,14 +162,42 @@ class LinkedList {
 
     return removedNode.val;
   }
+
+  //in place
+  //time complexity O(n)
+  reverse() {
+    let curr = this.head;
+
+    this.head = this.tail;
+    this.tail = curr;
+
+    let next = null;
+    let prev = null;
+
+    let count = 0;
+
+    while (count < this.length) {
+      next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+      count++;
+    }
+
+    return this;
+  }
 }
 
 
 let list = new LinkedList();
 list.push('HELLO');
 list.push('why');
+list.push('hi');
+list.push('why2');
+list.push('why4');
+list.reverse()
 
 
-console.log(list.remove(0));
+console.log(list.reverse());
 
 
