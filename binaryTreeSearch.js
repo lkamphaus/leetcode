@@ -100,6 +100,8 @@ class BST {
     return result;
   }
 
+  //DFS Pre-order
+
   DFS () {
     let result = [];
 
