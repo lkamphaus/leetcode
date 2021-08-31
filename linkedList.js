@@ -139,13 +139,37 @@ class LinkedList {
 
     return true;
   }
+
+  remove(index) {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+
+    if (index === this.length - 1) {
+      return this.pop();
+    }
+
+    if (index === 0) {
+      return this.shift();
+    }
+
+    let prevNode = this.get(index - 1);
+    let removedNode = prevNode.next;
+    let nextNode = removedNode.next;
+    prevNode.next = nextNode;
+
+    this.length--;
+
+    return removedNode.val;
+  }
 }
 
 
 let list = new LinkedList();
 list.push('HELLO');
 list.push('why');
-list.push('hi');
 
+
+console.log(list.remove(0));
 
 
