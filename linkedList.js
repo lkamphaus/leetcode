@@ -113,6 +113,30 @@ class LinkedList {
     curr.val = val;
     return true;
   }
+
+  insert(index, val) {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+
+    if (index === this.length) {
+      this.push(val);
+      return true;
+    }
+
+    if (index === 0) {
+      this.unshift(val);
+      return true;
+    }
+
+    let newNode = new Node(val);
+    let prevNode = this.get(index - 1);
+    let nextNode = prevNode.next;
+    prevNode.next = newNode;
+    newNode.next = nextNode;
+
+    return true;
+  }
 }
 
 
@@ -121,6 +145,5 @@ list.push('HELLO');
 list.push('why');
 list.push('hi');
 
-console.log(list.set(2, 'hi2'));
-console.log(list.pop());
+
 
