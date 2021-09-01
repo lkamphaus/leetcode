@@ -148,6 +148,30 @@ class BST {
 
     return result;
   }
+
+   //DFS In-order
+  DFSIn () {
+    let result = [];
+
+    const search = (node) => {
+
+      if (node.left) {
+        search(node.left);
+      }
+
+      result.push(node.val);
+
+      if (node.right) {
+        search(node.right);
+      }
+    }
+
+    search(this.root);
+
+    // result.push(this.root.val)
+
+    return result;
+  }
 }
 
 
@@ -163,6 +187,8 @@ console.log(tree.find(7)); //false
 console.log(tree.find(100)); //false
 console.log(tree.find(5)); //true
 
+console.log(tree.DFSPre());
 console.log(tree.DFSPost());
+console.log(tree.DFSIn());
 
 //2, 5, 16, 13, 10
