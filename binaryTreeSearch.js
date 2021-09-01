@@ -168,8 +168,6 @@ class BST {
 
     search(this.root);
 
-    // result.push(this.root.val)
-
     return result;
   }
 }
