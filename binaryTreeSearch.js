@@ -102,7 +102,7 @@ class BST {
 
   //DFS Pre-order
 
-  DFS () {
+  DFSPre () {
     let result = [];
 
     result.push(this.root.val)
@@ -124,6 +124,30 @@ class BST {
 
     return result;
   }
+
+  //DFS Post-order
+  DFSPost () {
+    let result = [];
+
+    const search = (node) => {
+
+      if (node.left) {
+        search(node.left);
+        result.push(node.left.val);
+      }
+
+      if (node.right) {
+        search(node.right);
+        result.push(node.right.val);
+      }
+    }
+
+    search(this.root);
+
+    result.push(this.root.val)
+
+    return result;
+  }
 }
 
 
@@ -132,7 +156,6 @@ tree.insert(10);
 tree.insert(5);
 tree.insert(2);
 tree.insert(13);
-tree.insert(11);
 tree.insert(16);
 
 console.log(tree.find(2)); //true
@@ -140,6 +163,6 @@ console.log(tree.find(7)); //false
 console.log(tree.find(100)); //false
 console.log(tree.find(5)); //true
 
-console.log(tree.DFS());
+console.log(tree.DFSPost());
 
-//10, 5, 2, 13, 11, 16
+//2, 5, 16, 13, 10
