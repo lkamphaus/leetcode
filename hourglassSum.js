@@ -1,5 +1,3 @@
-
-
 function hourglassSum(arr) {
   let max = - Infinity;
 
@@ -28,6 +26,8 @@ function hourglassSum(arr) {
   return max;
 }
 
+//time complexity O(m^2)
+
 let input = [[1, 1, 1, 0, 0, 0],
   [0, 1, 0, 0, 0, 0],
   [1, 1, 1, 0, 0, 0],
@@ -37,4 +37,4 @@ let input = [[1, 1, 1, 0, 0, 0],
 
 
 
-console.log(hourglassSum(input));
+console.log(hourglassSum(input)); //19
